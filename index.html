@@ -2,65 +2,60 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
+    <title>Video Gallery | Joy Sun</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Hsiao Yuan | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <div class="left">
-            <h1>Hey, I'm<br>Sun Hsiao Yuan</h1>
-            <p>Video Editor / Photographer</p> 
-            <p>
-                <a href="https://flic.kr/ps/3XACaY" class="link-text" target="_blank">Experience comes from living</a>
-            </p>
-        </div>
-        <div class="right"></div>
+<header class="header-container">
+    <div class="title-row">
+        <h1 class="page-heading">Video Gallery</h1>
+        <nav class="sub-nav">
+            <a href="../index.html">HOME</a>
+            <a href="../personal/personal.html">Personal</a>
+            <div class="dropdown">
+                <span class="drop-label active">PORTFOLIO <span class="arrow">▾</span></span>
+                <div class="dropdown-menu">
+                    <a href="../video/index.html">Video</a>
+                    <a href="../photo/photo-index.html">Photo</a>
+                </div>
+            </div>
+            <a href="../contact/contact-index.html">Contact</a>
+        </nav>
     </div>
 
-    <section class="about-section">
-        <h1 class="about-title">About Me</h1>
-        <div class="about-content">
-            <div class="about-block">
-                <h2>關於我</h2>
-                <p>我是孫筱媛 Joy，擁有五年以上影像拍攝與剪輯經驗，能獨立完成從腳本規劃、現場執行到後期剪輯的完整流程。熟悉品牌影像策略、商業拍攝現場管理，並具備空拍攝影實務經驗。</p>
-                <p>曾主導「台北市長逛赤峰街」美食節目企劃與拍攝。擅長因應複雜場域與多元拍攝需求，並從日常生活中汲取創作靈感。</p>
-                <p>近年開始學習 Python 與視覺特效整合應用，同時持續精進英文能力，期望拓展內容創作的可能性。</p>
-            </div>
-            <div class="about-block">
-                <h2>English</h2>
-                <p>I'm Sun Hsiao Yuan, and my English name is Joy. I have over five years of experience working as a video editor and filmmaker. My work spans commercial photography, wedding films, and motion graphics.</p>
-                <p>I created a travel show in collaboration with the Mayor of Taipei, where I was responsible for storyboard planning and leading the entire post-production process.</p>
-                <p>Recently, I’ve been studying Python programming and improving my English skills to expand my creative possibilities.</p>
-            </div>
+    <div class="page-title">
+        <p>Pick a video you're interested in.</p>
+    </div>
+</header>
+
+<main class="gallery-wrapper">
+    <div class="video-grid">
+        <div class="video-item" data-link="https://youtu.be/LaiVf9TETPw?si=o7jkPCPKYo1RuyoZ">
+            <div class="thumb" style="background-image: url('https://img.youtube.com/vi/rsCBSXuTYQU/maxresdefault.jpg');"></div>
+            <div class="title-v">旅遊節目</div>
         </div>
-    </section>
 
-    <section class="skills-section">
-        <h3>SKILLS</h3>
-        <div class="skills-list">
-            <div class="skill-item">Adobe Premiere</div>
-            <div class="skill-item">After Effects</div>
-            <div class="skill-item">Adobe Photoshop</div>
-            <div class="skill-item">Adobe Lightroom</div>
-            <div class="skill-item">Junior Web Designer</div>
-            <div class="skill-item">Illustrator</div>
-            <div class="skill-item">PowerPoint</div>
-            <div class="skill-item">Word</div>
+        <div class="video-item" data-link="https://www.youtube.com/watch?v=ffnG4JG-EbE">
+            <div class="thumb" style="background-image: url('https://img.youtube.com/vi/ffnG4JG-EbE/maxresdefault.jpg');"></div>
+            <div class="title-v">人物形象</div>
         </div>
-    </section>
 
-    <footer class="site-footer">
-        <nav class="footer-nav">
-            <ul>
-                <li><a href="video/index.html">影視作品</a></li>
-                <li><a href="photo/photo-index.html">商業攝影</a></li>
-                <li><a href="personal/personal.html">自我介紹</a></li>
-                <li><a href="contact/contact-index.html">聯繫方式</a></li>
-            </ul>
-        </nav>
-    </footer>
+        <div class="video-item" data-link="https://www.youtube.com/watch?v=M5yBtfzjA1g">
+            <div class="thumb" style="background-image: url('https://img.youtube.com/vi/M5yBtfzjA1g/hqdefault.jpg');"></div>
+            <div class="title-v">形象宣傳</div>
+        </div>
 
+        <div class="video-item" data-link="https://youtu.be/zoOYnVNDUp8?si=HPhYkoYBUTwjiI_E">
+            <div class="thumb" style="background-image: url('https://img.youtube.com/vi/zoOYnVNDUp8/maxresdefault.jpg');"></div>
+            <div class="title-v">活動紀錄</div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">© 2026 Joy Sun. All Rights Reserved.</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
