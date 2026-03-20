@@ -159,3 +159,65 @@ h3{
   border: 1px solid rgba(255,255,255,0.2);
   cursor: default;
 }
+
+/* --- 手機版 RWD 設定 (螢幕寬度小於 768px 時觸發) --- */
+@media (max-width: 768px) {
+  
+  /* 1. 調整主容器：從左右並排改為上下堆疊 */
+  .container {
+    flex-direction: column;
+    height: auto; /* 取消原本的 100vh，讓內容決定高度 */
+  }
+
+  /* 2. 左側色塊調整 */
+  .left {
+    padding: 30px 20px;
+    width: 100%;
+    order: 2; /* 可選：如果你希望手機上圖片在文字上面，就設為 2 */
+  }
+
+  /* 3. 右側圖片調整 */
+  .right {
+    height: 300px; /* 手機版給予固定高度，否則背景圖會縮小到看不見 */
+    width: 100%;
+    background-size: cover; /* 確保圖片填滿容器 */
+    order: 1; /* 可選：如果你希望手機上圖片在最上方，就設為 1 */
+  }
+
+  /* 4. 字體大小優化 */
+  .link-text {
+    font-size: 1.5rem;
+  }
+
+  h1, .about-section h1 {
+    font-size: 24px;
+  }
+
+  h3, .skills-section h3 {
+    font-size: 1.5rem;
+  }
+
+  /* 5. 關於區塊間距縮減 */
+  .about-section {
+    padding: 40px 15px;
+  }
+
+  .about-section p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* 6. 技能列表：從 2 欄改為 1 欄 */
+  .skills-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0 30px;
+  }
+
+  /* 7. 頁尾導覽列：改為可換行或垂直排列 */
+  .footer-nav ul {
+    flex-direction: column; /* 改為垂直排列 */
+    gap: 15px;
+    padding: 20px 0;
+  }
+}
