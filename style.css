@@ -1,223 +1,173 @@
+/* --- 通用設定 --- */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  overflow-x: hidden; /* 防止手機版左右滑動晃動 */
 }
 
+/* --- 首頁區塊 --- */
 .container {
   display: flex;
-  height: 100vh; /* 全螢幕高度 */
+  height: 100vh;
 }
 
 .left {
-  flex: 1; /* 左邊佔一半 */
-  background-color: #005f5f; /* 色塊顏色 */
+  flex: 1;
+  background-color: #005f5f;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 40px;
+  text-align: center;
 }
 
 .link-text {
-  color: white;          /* 白色字 */
-  font-size: 2rem;     /* 字體大小 */
-  font-weight: bold;     /* 粗體 */
-  text-decoration: none; /* 移除底線 */
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .link-text:hover {
-  text-decoration:underline /* 滑鼠移過去時顯示底線 */
+  text-decoration: underline;
 }
-
 
 .right {
-  flex: 0.8; /* 右邊佔一半 */
+  flex: 0.8;
   background: url('my-photo.jpg') no-repeat center center;
-  background-size:initial;
+  background-size: cover; /* 改為 cover 讓圖片填滿 */
 }
 
-h1 {
-  font-size: 2rem;
-  margin: 0;
-}
+h1 { font-size: 2rem; margin: 0; }
+p { margin-top: 1rem; font-size: 1.2rem; }
 
-p {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-}
-
-h3{
-  font-size: 2rem;
-  margin: 5;
-}
-
-
-.about-section h1 {
-  font-size: 28px;
-  color:#000000 ; /* 深藍綠色（依圖片調整） */
-  margin-bottom: 20px;
-}
-
-
+/* --- 關於我區塊 --- */
 .about-section {
-  background-color: #f2f2f2; /* 灰底 */
+  background-color: #f2f2f2;
   text-align: center;
   padding: 60px 20px;
 }
 
+.about-section h1 {
+  font-size: 28px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
 .about-section h2 {
   font-size: 20px;
-  color:#005f5f ; /* 深藍綠色（依圖片調整） */
-  margin-bottom: 20px;
+  color: #005f5f;
+  margin-bottom: 10px;
 }
 
 .about-section p {
   text-align: justify;
   max-width: 800px;
-  margin: 2px auto;
-  line-height: 2;
+  margin: 15px auto;
+  line-height: 1.8;
   color: #333;
   font-size: 15px;
 }
 
-.site-footer {
-  background-color: #1a1a1a;   /* 深色底 */
-  color: #fff;                 /* 文字白色 */
-  text-align: center;
-  padding: 20px 0;
-  font-family: Arial, sans-serif;
-}
-
-.footer-nav ul {
-  display: flex;
-  align-items: center;       /* 垂直居中，確保所有項目「齊高」 */
-  justify-content: center;    /* 水平居中 (可依需求改為 flex-start 或 space-between) */
-  background-color: #111;     /* 背景顏色 */
-  padding: 15px 0;
-  gap: 30px;                 /* 按鈕間距 */
-  margin: 0 0 10px 0;
-}
-
-
-
-.footer-nav a {
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-  line-height: 1;             
-  display: inline-flex;
-  align-items: center;
-}
-
-.footer-nav a:hover {
-  color: #ffbb00;
-}
-
-
-/* 區塊整體 */
+/* --- 技能區塊 --- */
 .skills-section {
-  background: url('images/your-background.jpg') center/cover no-repeat;
+  background-color: #fff; /* 或你的背景圖 */
   padding: 50px 0;
   text-align: center;
-  color: #fff;
-  position: relative;
 }
 
-/* 標題 */
 .skills-section h3 {
   font-size: 1.8rem;
-  color: #000000;
-  margin-bottom: 40px;
-  border-top: 1px solid rgba(255,255,255,0.3);
-  border-bottom: 1px solid rgba(255,255,255,0.3);
+  color: #000;
+  margin-bottom: 30px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   display: inline-block;
   padding: 10px 20px;
 }
 
-/* 技能列表 */
 .skills-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 25px 60px;
+  gap: 20px;
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* 技能項目 */
 .skill-item {
-  background: rgba(0, 104, 78, 0.842);
-  padding: 8px 30px;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #f1f1f1;
-  text-align: center;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255,255,255,0.2);
-  cursor: default;
+  background: rgba(0, 95, 95, 0.9);
+  padding: 12px;
+  border-radius: 8px;
+  color: #fff;
+  transition: 0.3s;
 }
 
-/* --- 手機版 RWD 設定 (螢幕寬度小於 768px 時觸發) --- */
+/* --- 頁尾 --- */
+.site-footer {
+  background-color: #1a1a1a;
+  padding: 30px 0;
+}
+
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  gap: 30px;
+}
+
+.footer-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-nav a:hover { color: #ffbb00; }
+
+/* ==========================================
+   🚀 手機版 RWD 調整 (螢幕寬度 < 768px)
+   ========================================== */
 @media (max-width: 768px) {
   
-  /* 1. 調整主容器：從左右並排改為上下堆疊 */
+  /* 1. 首頁改為上下堆疊，並讓圖片在上方 */
   .container {
     flex-direction: column;
-    height: auto; /* 取消原本的 100vh，讓內容決定高度 */
+    height: auto;
   }
 
-  /* 2. 左側色塊調整 */
-  .left {
-    padding: 30px 20px;
-    width: 100%;
-    order: 2; /* 可選：如果你希望手機上圖片在文字上面，就設為 2 */
-  }
-
-  /* 3. 右側圖片調整 */
   .right {
-    height: 300px; /* 手機版給予固定高度，否則背景圖會縮小到看不見 */
+    height: 400px; /* 手機版固定高度 */
     width: 100%;
-    background-size: cover; /* 確保圖片填滿容器 */
-    order: 1; /* 可選：如果你希望手機上圖片在最上方，就設為 1 */
+    order: 1; /* 圖片排第一 */
   }
 
-  /* 4. 字體大小優化 */
-  .link-text {
-    font-size: 1.5rem;
+  .left {
+    width: 100%;
+    padding: 50px 20px;
+    order: 2; /* 文字排第二 */
   }
 
-  h1, .about-section h1 {
-    font-size: 24px;
-  }
+  .link-text { font-size: 1.4rem; }
 
-  h3, .skills-section h3 {
-    font-size: 1.5rem;
-  }
-
-  /* 5. 關於區塊間距縮減 */
-  .about-section {
-    padding: 40px 15px;
-  }
-
+  /* 2. 關於我區塊間距 */
   .about-section p {
-    font-size: 14px;
-    line-height: 1.8;
+    text-align: left; /* 手機版靠左較好閱讀 */
+    padding: 0 10px;
   }
 
-  /* 6. 技能列表：從 2 欄改為 1 欄 */
+  /* 3. 技能列表：改為單欄 */
   .skills-list {
     grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 0 30px;
+    padding: 0 40px;
   }
 
-  /* 7. 頁尾導覽列：改為可換行或垂直排列 */
+  /* 4. 頁尾：選單改為垂直排列 */
   .footer-nav ul {
-    flex-direction: column; /* 改為垂直排列 */
+    flex-direction: column;
+    align-items: center;
     gap: 15px;
-    padding: 20px 0;
   }
 }
