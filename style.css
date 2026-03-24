@@ -1,0 +1,179 @@
+/* --- 1. 基礎設定 --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden; /* 防止水平捲軸 */
+}
+
+/* --- 2. 首頁 Hero 區塊 --- */
+.container {
+  display: flex;
+  height: 100vh; /* 電腦版全螢幕 */
+  flex-direction: row-reverse; /* 配合 HTML 結構：照片在前、文字在後，但顯示為左文右圖 */
+}
+
+.left {
+  flex: 1;
+  background-color: #005f5f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+}
+
+.right {
+  flex: 1.2; /* 稍微調整比例讓照片更完整 */
+  background: url('my-photo.jpg') no-repeat center center;
+  background-size: cover; /* 修正：使用 cover 確保圖片鋪滿區塊 */
+}
+
+.link-text {
+  color: white;
+  font-size: 1.5rem; /* 稍微縮小以利排版 */
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.link-text:hover {
+  text-decoration: underline; /* 補齊分號 */
+  color: #5ac8d8;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* --- 3. 關於我區塊 --- */
+.about-section {
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.about-section h1 {
+  font-size: 28px;
+  color: #000000;
+  margin-bottom: 30px;
+}
+
+.about-section h2 {
+  font-size: 20px;
+  color: #005f5f;
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  text-align: justify;
+  max-width: 800px;
+  margin: 0 auto 30px; /* 修正 margin 邏輯 */
+  line-height: 1.8;
+  color: #333;
+  font-size: 16px;
+}
+
+/* --- 4. 技能區塊 --- */
+.skills-section {
+  /* 建議若無背景圖，可給予底色以免字體看不見 */
+  background: #ffffff; 
+  padding: 80px 0;
+  text-align: center;
+}
+
+.skills-section h3 {
+  font-size: 1.8rem;
+  color: #000000;
+  margin-bottom: 40px;
+  border-top: 2px solid #005f5f;
+  border-bottom: 2px solid #005f5f;
+  display: inline-block;
+  padding: 10px 30px;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.skill-item {
+  background: rgba(0, 95, 95, 0.9);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  background: #007a7a;
+}
+
+/* --- 5. 頁尾 --- */
+.site-footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;
+  margin-bottom: 15px;
+}
+
+.footer-nav a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #5ac8d8;
+}
+
+/* --- 6. 響應式手機版適配 (RWD) --- */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* 改為垂直排列 */
+    height: auto;
+  }
+
+  .right {
+    height: 350px; /* 手機版給予照片固定高度 */
+    width: 100%;
+  }
+
+  .left {
+    padding: 60px 20px;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr; /* 技能改為單欄 */
+    gap: 15px;
+  }
+
+  .footer-nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
