@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯絡我 | Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header>
+    <div class="header-content">
+        <div class="name-title">
+            <h1>Joy Sun</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../personal/index.html">Personal</a></li>
+                <li><a href="../video/index.html">Gallery</a></li>
+                <li><a href="../contact/contact-index.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-header">
+            <h2>Contact Me</h2>
+            <p>有任何合作想法或問題嗎？隨時傳個訊息給我吧！</p>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="info-item">
+                    <h4>EMAIL</h4>
+                    <p>hellhellnonono@gmail.com</p>
+                    <h5>PHONE</h5>
+                    <p>0912-731-809</p>
+                </div>
+                <div class="info-item">
+                    <div class="social-links">
+                        </div>
+                </div>
+            </div>
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="您的姓名" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="電子信箱" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" placeholder="想對我說的話..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">傳送訊息</button>
+                <div id="formStatus" class="status-msg"></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer style="text-align: center; padding: 40px; opacity: 0.5; font-size: 12px;">
+    © 2026 Joy Sun. All Rights Reserved.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
