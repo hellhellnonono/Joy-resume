@@ -1,68 +1,79 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // 取得所有必要的元素
-    const galleryImages = document.querySelectorAll('.gallery img');
-    const overlayBg = document.querySelector('.overlay-bg');
-    const focusedImage = document.querySelector('.focused-image');
-    
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = document.querySelector('.lightbox .close');
+'use strict';
 
-    // 判斷是否為觸控裝置 (手機或平板)
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+const projects = {
+  earphone: { title: 'Earphones', images: ['earphone-01.JPG', 'earphone-02.JPG'] },
+  coffee: { title: 'Coffee Gift Set', images: ['coffeeset-01.jpg', 'coffeeset-02.jpg', 'coffeeset-03.JPG'] },
+  nougat: { title: 'Nougat', images: ['nugat-01.jpg', 'nugat-02.jpg', 'nugat-03.jpg', 'nugat-04.jpg'] },
+  portrait: { title: 'Portrait Photography', images: ['Portrait Photography-01.JPG', 'Portrait Photography-02.JPG'] },
+  birthday: { title: 'First Birthday Celebration', images: ['one-year-old catch-01.jpg', 'one-year-old catch-02.jpg', 'one-year-old catch-03.jpg'] },
+  commercial: { title: 'Commercial Editorial', images: ['commercial-01.jpg', 'commercial-02.jpg'] }
+};
 
-    galleryImages.forEach(img => {
-        
-        // --- 1. 電腦版 Hover 預覽邏輯 ---
-        // 只有在非觸控裝置（電腦）上才執行預覽功能
-        if (!isTouchDevice && overlayBg && focusedImage) {
-            img.addEventListener('mouseenter', () => {
-                focusedImage.src = img.src;
-                overlayBg.classList.add('active');
-                focusedImage.classList.add('active');
-            });
+const dialog = document.getElementById('projectLightbox');
+const fullImage = document.getElementById('projectFullImage');
+const title = document.getElementById('projectTitle');
+const counter = document.getElementById('projectCounter');
+const caption = document.getElementById('projectImageCaption');
+let currentProject = null;
+let currentIndex = 0;
+let touchStartX = null;
 
-            img.addEventListener('mouseleave', () => {
-                overlayBg.classList.remove('active');
-                focusedImage.classList.remove('active');
-            });
-        }
+function renderImage() {
+  if (!currentProject) return;
+  const project = projects[currentProject];
+  const imageName = project.images[currentIndex];
+  title.textContent = project.title;
+  counter.textContent = `${currentIndex + 1} / ${project.images.length}`;
+  caption.textContent = `${project.title} — ${currentIndex + 1} of ${project.images.length}`;
+  fullImage.src = imageName;
+  fullImage.alt = `${project.title}，第 ${currentIndex + 1} 張，共 ${project.images.length} 張`;
+}
+function openProject(key) {
+  if (!projects[key]) return;
+  currentProject = key;
+  currentIndex = 0;
+  renderImage();
+  dialog.showModal();
+}
+function stepImage(delta) {
+  if (!currentProject) return;
+  const length = projects[currentProject].images.length;
+  currentIndex = (currentIndex + delta + length) % length;
+  renderImage();
+}
 
-        // --- 2. 通用 Lightbox 點擊放大邏輯 ---
-        img.addEventListener('click', () => {
-            // 將點擊的圖片路徑傳給燈箱
-            lightboxImg.src = img.src;
-            lightbox.classList.add('active');
-            
-            // 點擊後確保電腦版的預覽層會消失，避免層級衝突
-            if (overlayBg) overlayBg.classList.remove('active');
-            if (focusedImage) focusedImage.classList.remove('active');
-        });
-    });
+document.querySelectorAll('.project-card[data-project]').forEach(card => {
+  card.addEventListener('click', () => openProject(card.dataset.project));
+});
+document.querySelector('.project-close').addEventListener('click', () => dialog.close());
+document.querySelector('.project-prev').addEventListener('click', () => stepImage(-1));
+document.querySelector('.project-next').addEventListener('click', () => stepImage(1));
+dialog.addEventListener('keydown', event => {
+  if (event.key === 'ArrowLeft') { event.preventDefault(); stepImage(-1); }
+  if (event.key === 'ArrowRight') { event.preventDefault(); stepImage(1); }
+});
+dialog.addEventListener('click', event => {
+  if (event.target === dialog) dialog.close();
+});
+fullImage.addEventListener('touchstart', event => {
+  touchStartX = event.changedTouches[0].screenX;
+}, { passive: true });
+fullImage.addEventListener('touchend', event => {
+  if (touchStartX === null) return;
+  const delta = event.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(delta) > 45) stepImage(delta < 0 ? 1 : -1);
+  touchStartX = null;
+}, { passive: true });
 
-    // --- 3. 關閉燈箱功能 ---
-    const closeLightbox = () => {
-        lightbox.classList.remove('active');
-        // 延遲清空圖片路徑，避免關閉動畫時看到圖片突然消失
-        setTimeout(() => { lightboxImg.src = ""; }, 300);
-    };
-
-    // 點擊關閉按鈕
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeLightbox);
-    }
-
-    // 點擊燈箱背景處（非圖片區域）也可關閉
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            closeLightbox();
-        }
-    });
-
-    // 按下鍵盤 Esc 鍵關閉
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeLightbox();
-        }
-    });
+const portfolioToggle = document.querySelector('.drop-label');
+const dropdown = document.querySelector('.dropdown');
+portfolioToggle.addEventListener('click', () => {
+  const isOpen = dropdown.classList.toggle('is-open');
+  portfolioToggle.setAttribute('aria-expanded', String(isOpen));
+});
+document.addEventListener('click', event => {
+  if (!dropdown.contains(event.target)) {
+    dropdown.classList.remove('is-open');
+    portfolioToggle.setAttribute('aria-expanded', 'false');
+  }
 });

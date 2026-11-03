@@ -1,70 +1,75 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Gallery</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography Portfolio | Joy Sun</title>
+  <link rel="stylesheet" href="style.css?v=5">
+  <script src="script.js?v=5" defer></script>
 </head>
 <body>
-
-<header>
-    <section class="page-title">
-        <div class="title-row">
-            <h1 class="page-heading">Photo Gallery</h1>
-            <nav class="sub-nav">
-                <a href="../index.html">HOME</a>
-                <a href="../personal/index.html">Personal</a>
-                <div class="dropdown">
-                    <span class="drop-label active">
-                        PORTFOLIO <span class="arrow">▾</span>
-                    </span>
-                    <div class="dropdown-menu">
-                        <a href="../video/index.html">Video</a>
-                        <a href="photo-index.html">Photo</a>
-                    </div>
-                </div>
-                <a href="../contact/contact-index.html">Contact</a>
-            </nav>
+<header class="site-header">
+  <div class="title-row">
+    <nav class="sub-nav" aria-label="主要導覽">
+      <a href="../index.html">HOME</a>
+      <a href="../personal/index.html">Personal</a>
+      <div class="dropdown">
+        <button class="drop-label active" type="button" aria-expanded="false" aria-controls="portfolioMenu">PORTFOLIO <span aria-hidden="true">▾</span></button>
+        <div class="dropdown-menu" id="portfolioMenu">
+          <a href="../video/index.html">Video</a>
+          <a href="photo-index.html" aria-current="page">Photo</a>
         </div>
-    </section>
-
-    <section class="page-title">
-        <p>Pick a photo you're interested in.</p>
-    </section>
-</header>
-
-<main>
-    <div class="gallery">
-        <img src="earphone-01.JPG" alt="商品攝影-藍芽耳機組拍攝">
-        <img src="earphone-02.JPG" alt="商品攝影-藍芽耳機拍攝">
-        <img src="coffeeset-01.jpg" alt="商品攝影-咖啡禮盒拍攝">
-        <img src="coffeeset-02.jpg" alt="商品攝影-咖啡情境拍攝">
-        <img src="coffeeset-03.JPG" alt="商品攝影-咖啡拍攝">
-        <img src="nugat-01.jpg" alt="商品攝影-牛嘎糖情境">
-        <img src="nugat-02.jpg" alt="商品攝影-牛嘎糖情境">
-        <img src="Portrait Photography-01.JPG" alt="商品攝影-北捷人物拍攝">
-        <img src="Portrait Photography-02.JPG" alt="商品攝影-北捷人物拍攝">
-        <img src="one-year-old catch-01.jpg" alt="商品攝影-抓週活動拍攝">
-        <img src="one-year-old catch-02.jpg" alt="商品攝影-抓週活動拍攝">
-        <img src="one-year-old catch-03.jpg" alt="商品攝影-抓週活動拍攝">
-        <img src="commercial-01.jpg" alt="商品攝影-雜誌商品拍攝">
-        <img src="commercial-02.jpg" alt="商品攝影-雜誌商品拍攝">
-    </div>
+      </div>
+      <a href="../contact/contact-index.html">Contact</a>
+    </nav>
+  </div>
+</header
+>
+<main class="portfolio-main">
+  <section class="portfolio-intro" aria-labelledby="portfolioHeading">
+    <h2 id="portfolioHeading">Photography Portfolio</h2>
+     <p>Pick a project you're interested in.</p>
+   
+  </section>
+  <section class="project-gallery" id="projectGallery" aria-label="攝影專案分類">
+    <button class="project-card project-large" type="button" data-project="earphone" aria-label="瀏覽 Earphones，2 張照片">
+      <img src="earphone-01.JPG" alt="藍牙耳機商品攝影" loading="lazy">
+      <span class="project-info"><span class="project-category">01 / PRODUCT PHOTOGRAPHY</span><strong>Earphones</strong><small>2 Photographs</small></span>
+    </button>
+    <button class="project-card" type="button" data-project="coffee" aria-label="瀏覽 Coffee Gift Set，3 張照片">
+      <img src="coffeeset-01.jpg" alt="咖啡禮盒商品攝影" loading="lazy">
+      <span class="project-info"><span class="project-category">02 / COMMERCIAL PHOTOGRAPHY</span><strong>Coffee Gift Set</strong><small>3 Photographs</small></span>
+    </button>
+    <button class="project-card" type="button" data-project="nougat" aria-label="瀏覽 Nougat，4 張照片">
+      <img src="nugat-01.jpg" alt="牛軋糖商品攝影" loading="lazy">
+      <span class="project-info"><span class="project-category">03 / FOOD PHOTOGRAPHY</span><strong>Nougat</strong><small>4 Photographs</small></span>
+    </button>
+    <button class="project-card project-large" type="button" data-project="portrait" aria-label="瀏覽 Portrait Photography，2 張照片">
+      <img src="Portrait Photography-01.JPG" alt="台北捷運人物攝影" loading="lazy">
+      <span class="project-info"><span class="project-category">04 / PORTRAIT PHOTOGRAPHY</span><strong>Portrait Photography</strong><small>2 Photographs</small></span>
+    </button>
+    <button class="project-card project-large" type="button" data-project="birthday" aria-label="瀏覽 First Birthday Celebration，3 張照片">
+      <img src="one-year-old catch-01.jpg" alt="抓週活動攝影" loading="lazy">
+      <span class="project-info"><span class="project-category">05 / EVENT PHOTOGRAPHY</span><strong>First Birthday Celebration</strong><small>3 Photographs</small></span>
+    </button>
+    <button class="project-card" type="button" data-project="commercial" aria-label="瀏覽 Commercial Editorial，2 張照片">
+      <img src="commercial-01.jpg" alt="雜誌商品攝影" loading="lazy">
+      <span class="project-info"><span class="project-category">06 / EDITORIAL PHOTOGRAPHY</span><strong>Commercial Editorial</strong><small>2 Photographs</small></span>
+    </button>
+  </section>
 </main>
-
-<div class="overlay-bg"></div>
-<img class="focused-image" src="" alt="放大圖片">
-
-<div class="lightbox" id="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" id="lightbox-img" src="">
-</div>
-
-<footer class="footer" style="text-align: center; padding: 40px; opacity: 0.5; font-size: 12px;">
-    © 2026 Joy Sun. All Rights Reserved.
-</footer>
-
-<script src="script.js"></script>
+<dialog class="project-lightbox" id="projectLightbox" aria-label="攝影專案作品檢視">
+  <button class="project-close" type="button" aria-label="關閉作品">×</button>
+  <div class="project-lightbox-content">
+    <div class="project-lightbox-heading"><span id="projectCounter"></span><h2 id="projectTitle"></h2></div>
+    <div class="project-image-wrap">
+      <button class="project-prev" type="button" aria-label="上一張">‹</button>
+      <img id="projectFullImage" alt="">
+      <button class="project-next" type="button" aria-label="下一張">›</button>
+    </div>
+    <p class="project-image-caption" id="projectImageCaption" aria-live="polite"></p>
+  </div>
+</dialog>
+<footer class="footer">© 2026 Joy Sun. All Rights Reserved.</footer>
 </body>
 </html>
