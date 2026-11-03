@@ -9,10 +9,34 @@
     <link rel="stylesheet" href="mobile-responsive.css?v=2">
 </head>
 
-
+<script src="mobile-menu.js"></script>
 <body>
+   
+<header class="mobile-header">
+  <a href="#home" class="mobile-brand">Sun Hsiao Yuan</a>
+  <button class="mobile-menu-toggle"
+          type="button"
+          aria-label="開啟選單"
+          aria-expanded="false"
+          aria-controls="mobileNav">
+    ☰
+  </button>
 
-    <div class="container">
+  <nav class="mobile-nav" id="mobileNav" aria-label="手機導覽">
+    <a href="#home">首頁</a>
+    <a href="#about">關於我</a>
+    <a href="#skills">技能</a>
+    <a href="video/index.html">影視作品</a>
+    <a href="photo/photo-index.html">商業攝影</a>
+    <a href="contact/contact-index.html">聯繫方式</a>
+    <div class="mobile-nav-languages">
+      <button type="button" data-language="zh">中文</button>
+      <button type="button" data-language="en">English</button>
+    </div>
+  </nav>
+</header>
+
+    <div class="container" id="home">
         <div class="left">
             <h1>Hey, I'm<br>Sun Hsiao Yuan</h1>
             <p>Video Editor / Photographer</p> 
@@ -29,10 +53,16 @@
     </div>
 
 
-    <section class="about-section">
+    <section class="about-section" id="skills">
         <h1 class="about-title">About Me</h1>
+           
+        <div class="language-switch" aria-label="自我介紹語言">
+          <button type="button" data-language="zh">中文</button>
+          <button type="button" data-language="en">English</button>
+        </div>
+
     <div class="about-content">
-        <div class="about-block">
+        <div class="about-block" lang="zh-Hant" data-lang-panel="zh">
                 <h2>關於我</h2>
                 <p>我是孫筱媛 Joy，擁有八年以上影音企劃、腳本撰寫、影音製作與剪輯經驗，具備概念發想到實際完成作品之實務能力。熟悉品牌影像策略、商業拍攝現場管理及影像器材維護管理。</p>
                 <p>除影像製作外，也負責團隊案件分配與進度協調，依據專案需求分工，並負責跨部門溝通、需求整合及執行問題協調，確保各項專案順利推進。</p>
@@ -41,7 +71,7 @@
                 <p>近期也持續嘗試運用生成式AI(ChatGPT、Gemini)結合影像，讓生成式AI創造可以符合企劃方向之影片。配樂方面，則運用 Suno AI 生成適合影片風格與節奏的背景音樂，再搭配畫面進行剪輯與整合，讓整體視聽效果更加完整。</p>
             </div>
 
-        <div class="about-block" lang="en">
+        <div class="about-block" lang="en" data-lang-panel="en">
             <h2>English</h2>
             <p>My name is Joy Sun. I have over 8 years of experience in video planning, scriptwriting, filming, and video editing. I can handle the whole video production process, from the first idea to the final video. I also have experience in brand video planning, managing commercial shoots, and taking care of filming equipment.</p>
             <p>Besides video production, I also help manage team projects. I assign tasks, track project progress, and communicate with different departments. I work with team members to understand project needs, solve problems, and make sure projects run smoothly.</p>

@@ -67,3 +67,119 @@
         flex: 0 0 40px;
     }
 }
+
+
+
+/* 手機導覽與語言切換 */
+
+.mobile-header,
+.language-switch {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+
+  .mobile-header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 64px;
+    padding: 12px 20px;
+    background: #005f5f;
+    color: #fff;
+  }
+
+  .mobile-brand {
+    color: #fff;
+    font-size: 19px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .mobile-menu-toggle {
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 29px;
+    cursor: pointer;
+  }
+
+  .mobile-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 18px 24px 24px;
+    background: #005f5f;
+    box-shadow: 0 12px 20px rgba(0,0,0,.2);
+  }
+
+  .mobile-nav.is-open {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mobile-nav > a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 0;
+    font-size: 17px;
+  }
+
+  .mobile-nav-languages {
+    display: flex;
+    gap: 12px;
+    border-top: 1px solid rgba(255,255,255,.3);
+    padding-top: 16px;
+  }
+
+  .mobile-nav-languages button {
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 6px;
+    padding: 8px 16px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+  }
+
+  .language-switch {
+    display: flex;
+    width: min(100%, 360px);
+    margin: 0 auto 30px;
+    border: 1px solid #005f5f;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .language-switch button {
+    flex: 1;
+    border: none;
+    padding: 12px;
+    color: #005f5f;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .language-switch button.is-active,
+  .mobile-nav-languages button.is-active {
+    background: #005f5f;
+    color: #fff;
+  }
+
+  .about-content {
+    display: block;
+  }
+
+  .about-content .about-block[hidden] {
+    display: none !important;
+  }
+}
