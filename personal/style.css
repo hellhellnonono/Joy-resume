@@ -1,190 +1,97 @@
-/* --- 基礎設定 --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+:root {
+  --bg: #064e50;
+  --bg-deep: #043e40;
+  --panel: #0a5b5c;
+  --text: #f4f6f3;
+  --muted: #bed0cc;
+  --accent: #8bd7d0;
+  --line: rgba(255,255,255,.19);
+  --max-width: 1160px;
 }
-
-body {
-    background-color: #005f5f;
-    color: #ffffff;
-    line-height: 1.6;
-    padding: 0 10%; /* 電腦版邊距 */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: "PingFang TC", "Microsoft JhengHei", Arial, sans-serif; line-height: 1.75; }
+a { color: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.site-header { border-bottom: 1px solid var(--line); }
+.header-inner { max-width: var(--max-width); margin: auto; padding: 22px 28px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.brand { font-size: 19px; font-weight: 800; letter-spacing: .13em; text-decoration: none; white-space: nowrap; }
+.brand-dot { color: var(--accent); }
+.main-nav { display: flex; align-items: center; gap: clamp(12px,2.5vw,32px); flex-wrap: wrap; }
+.main-nav a { font-size: 13px; letter-spacing: .04em; text-decoration: none; color: var(--muted); transition: color .2s ease; }
+.main-nav a:hover, .main-nav a.active { color: white; }
+.main-nav a.active { border-bottom: 1px solid var(--accent); padding-bottom: 5px; }
+.section-shell { max-width: var(--max-width); margin: 0 auto; padding: 84px 28px; }
+.eyebrow { color: var(--accent); font-size: 11px; letter-spacing: .17em; font-weight: 700; margin: 0 0 17px; }
+.hero { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); align-items: center; gap: clamp(32px,6vw,80px); min-height: 610px; }
+.hero h1 { font-size: clamp(40px,5.1vw,70px); line-height: 1.22; letter-spacing: -.035em; margin: 0 0 24px; font-weight: 750; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-name { font-size: 19px; font-weight: 700; margin: 0 0 4px; }
+.hero-name span { font-size: 15px; color: var(--muted); font-weight: 400; margin-left: 8px; }
+.hero-position { color: var(--accent); font-size: 14px; margin: 0 0 18px; }
+.hero-description { max-width: 560px; color: var(--muted); font-size: 15px; margin: 0 0 30px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 46px; padding: 10px 22px; border: 1px solid var(--accent); text-decoration: none; font-size: 13px; font-weight: 700; transition: background .2s ease, color .2s ease; }
+.button-primary { background: var(--accent); color: var(--bg-deep); }
+.button-primary:hover { background: #b2eee7; }
+.button-outline { color: white; background: transparent; }
+.button-outline:hover { background: rgba(255,255,255,.08); }
+.hero-visual { min-width: 0; }
+.portrait-placeholder { aspect-ratio: 4/5; background: linear-gradient(145deg,#267578,#0d3d40); border: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: rgba(255,255,255,.55); }
+.portrait-placeholder span { font-size: 13px; letter-spacing: .18em; }
+.portrait-placeholder small { font-size: 11px; }
+/* 放入真實形象照後：把 .portrait-placeholder 替換成 <img class="portrait-image" src="profile.jpg" alt="Joy Sun 個人形象照"> */
+.portrait-image { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
+.visual-caption { display: block; color: var(--muted); font-size: 10px; letter-spacing: .1em; text-align: right; margin-top: 12px; }
+.about, .experience, .expertise, .beyond { display: grid; grid-template-columns: minmax(170px,.32fr) minmax(0,.68fr); gap: clamp(28px,5vw,80px); border-top: 1px solid var(--line); }
+.section-side h2 { margin: 0; font-size: clamp(26px,3vw,38px); line-height: 1.25; letter-spacing: -.02em; }
+.section-content { min-width: 0; }
+.section-content p { color: var(--muted); margin: 0 0 18px; font-size: 15px; }
+.section-content .lead { font-size: clamp(19px,2vw,25px); line-height: 1.65; color: white; font-weight: 650; margin-bottom: 24px; }
+.side-note { color: var(--muted); font-size: 13px; margin-top: 20px; max-width: 220px; }
+.timeline-item { display: grid; grid-template-columns: 138px minmax(0,1fr); gap: 25px; padding: 0 0 38px; margin-bottom: 38px; border-bottom: 1px solid var(--line); }
+.timeline-item:last-child { border-bottom: 0; padding-bottom: 0; margin-bottom: 0; }
+.timeline-year { color: var(--accent); font-size: 12px; letter-spacing: .04em; font-weight: 700; padding-top: 7px; }
+.timeline-body h3 { font-size: 22px; line-height: 1.35; margin: 0 0 5px; }
+.timeline-body .job-title { color: var(--accent); font-size: 14px; margin: 0 0 14px; }
+.timeline-body ul { padding-left: 19px; margin: 0; color: var(--muted); font-size: 14px; }
+.timeline-body li { margin: 6px 0; }
+.expertise-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
+.expertise-card { padding: 24px; background: var(--panel); border: 1px solid var(--line); min-height: 176px; }
+.expertise-card span { font-size: 11px; color: var(--accent); }
+.expertise-card h3 { font-size: 17px; margin: 14px 0 6px; }
+.expertise-card p { font-size: 13px; margin: 0; }
+.contact-banner { background: var(--bg-deep); max-width: none; padding-left: max(28px,calc((100vw - var(--max-width))/2 + 28px)); padding-right: max(28px,calc((100vw - var(--max-width))/2 + 28px)); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.contact-banner h2 { font-size: clamp(23px,3vw,38px); line-height: 1.3; margin: 0; }
+.site-footer { text-align: center; padding: 30px 20px; font-size: 12px; color: var(--muted); }
+@media (max-width: 900px) {
+ .hero { min-height: 0; }
+ .hero h1 { font-size: clamp(35px,5vw,52px); }
+ .about, .experience, .expertise, .beyond { grid-template-columns: minmax(130px,.3fr) minmax(0,.7fr); gap: 25px; }
+ .timeline-item { grid-template-columns: 1fr; gap: 8px; }
 }
-
-.accent-color {
-    color: #5ac8d8;
+@media (max-width: 680px) {
+ .header-inner { padding: 19px 20px; flex-direction: column; gap: 15px; }
+ .main-nav { justify-content: center; gap: 12px 19px; }
+ .main-nav a { font-size: 12px; }
+ .section-shell { padding: 58px 20px; }
+ .hero { grid-template-columns: 1fr; gap: 36px; }
+ .hero h1 { font-size: clamp(36px,9vw,52px); }
+ .hero-visual { max-width: 440px; width: 100%; }
+ .about, .experience, .expertise, .beyond { grid-template-columns: 1fr; gap: 28px; }
+ .side-note { max-width: none; }
+ .expertise-grid { grid-template-columns: 1fr 1fr; }
+ .expertise-card { padding: 17px; min-height: 155px; }
+ .expertise-card h3 { font-size: 15px; }
+ .contact-banner { flex-direction: column; align-items: flex-start; }
 }
-
-/* --- Header --- */
-header {
-    padding: 60px 0;
+@media (max-width: 390px) {
+ .main-nav { gap: 9px 13px; }
+ .expertise-grid { grid-template-columns: 1fr; }
+ .hero-actions .button { width: 100%; }
 }
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.name-title h1 {
-    font-size: 2rem;
-    letter-spacing: 2px;
-    color: #5ac8d8;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 25px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-
-nav ul li a.active, nav ul li a:hover {
-    color: #5ac8d8;
-}
-
-/* --- About Me Section --- */
-.about-section {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 50px;
-    align-items: start;
-}
-
-.about-text h2 {
-    margin-bottom: 20px;
-}
-
-.about-text p {
-    margin-bottom: 30px;
-    font-size: 0.9rem;
-}
-
-.download-btn {
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.download-btn:hover {
-    background-color: #5ac8d8;
-}
-
-.about-info p {
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-}
-
-.about-photo img {
-    width: 100%;
-    max-width: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* --- 分隔線 --- */
-.separator {
-    border: 0;
-    height: 1px;
-    background: #5ac8d8;
-    margin-bottom: 60px;
-}
-
-/* --- 工作經歷佈局 --- */
-.experience-group {
-    display: flex;
-    margin-bottom: 50px;
-}
-
-.exp-label {
-    flex: 1;
-}
-
-.exp-list {
-    flex: 2;
-}
-
-.exp-item {
-    margin-bottom: 60px;
-}
-
-.exp-item p {
-    font-size: 0.95rem;
-}
-
-.exp-item .role {
-    font-size: 0.9rem;
-    margin-top: 8px;
-    font-weight: bold;
-}
-
-/* =========================================
-   手機版 RWD 調整 (當螢幕寬度小於 768px 時)
-   ========================================= */
-@media (max-width: 768px) {
-    body {
-        padding: 0 20px; /* 縮小邊距 */
-    }
-
-    header {
-        padding: 40px 0;
-    }
-
-    .header-content {
-        flex-direction: column; /* 標題與導覽上下排列 */
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-    }
-
-    nav ul {
-        padding: 0;
-    }
-
-    nav ul li {
-        margin: 0 10px;
-    }
-
-    /* About Me 改為單欄排列 */
-    .about-section {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
-    }
-
-    .about-photo {
-        order: -1; /* 照片移到最上方 */
-    }
-
-    .about-photo img {
-        max-width: 200px;
-        margin: 0 auto;
-    }
-
-    /* 經歷列表改為上下排列 */
-    .experience-group {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .exp-label {
-        border-bottom: 1px solid rgba(90, 200, 216, 0.3);
-        padding-bottom: 10px;
-    }
+@media (prefers-reduced-motion: reduce) {
+ html { scroll-behavior: auto; }
+ *, *::before, *::after { transition-duration: .01ms !important; }
 }

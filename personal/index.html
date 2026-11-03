@@ -1,94 +1,103 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人簡歷網頁 | Joy Sun</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Joy Sun 孫筱媛的個人經歷：影音企劃、影像編導、動態視覺與專案統籌。">
+  <title>About Joy Sun | 個人經歷</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="Joy Sun 首頁">JOY SUN<span class="brand-dot">.</span></a>
+      <nav class="main-nav" aria-label="主要導覽">
+        <a href="../index.html">Home</a>
+        <a href="index.html" class="active" aria-current="page">Personal</a>
+        <a href="../video/index.html">Video</a>
+        <a href="../photo/photo-index.html">Photo</a>
+        <a href="../contact/contact-index.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <header>
-        <div class="header-content">
-            <div class="name-title">
-                <h1>孫筱媛, Joy Sun</h1>
-                <p>影音製作編導</p>
-            </div>
-            
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../personal/index.html" class="active">Personal</a></li>
-                    <li><a href="../video/index.html">Gallery</a></li>
-                    <li><a href="../contact/contact-index.html">Contact</a></li>
-                </ul>
-            </nav>
+  <main>
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">PERSONAL PROFILE / JOY SUN</p>
+        <h1 id="hero-title">讓創意成為<br><em>有感染力的故事。</em></h1>
+        <p class="hero-name">孫筱媛 <span>Joy Sun</span></p>
+        <p class="hero-position">影像企劃・編導製作・動態視覺・專案統籌</p>
+        <p class="hero-description">從創意發想、腳本企劃、現場拍攝到後期製作，整合跨部門需求，將抽象概念轉化為清晰、有溫度的影像語言。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="../video/index.html">Explore My Work <span aria-hidden="true">↗</span></a>
+          <a class="button button-outline" href="../contact/contact-index.html">Get in Touch</a>
         </div>
-    </header>
+      </div>
+      <div class="hero-visual">
+        <!-- 將 personal/profile.jpg 換成你自己的個人形象照 -->
+        <div class="portrait-placeholder" role="img" aria-label="個人形象照預留位置，請替換為自己的照片">
+          <span>YOUR PORTRAIT</span>
+          <small>Replace with profile.jpg</small>
+        </div>
+        <span class="visual-caption">CREATIVE THINKING × VISUAL STORYTELLING</span>
+      </div>
+    </section>
 
-    <main>
-        <section class="about-section">
-            <div class="about-text">
-                <h2 class="accent-color">About Me</h2>
-                <p>您可以叫我 Joy！<br>
-                   持續保持對新想法與視覺表現的熱情，樂於跳脫框架，讓理性與想像力在作品中並行。<br>
-                   生活就像打怪闖關，每一次突破都是經驗值的累積，每一步都是成長的淬鍊。</p>
-                <button class="download-btn">Download Full Resume</button>
-            </div>
-            <div class="about-info">
-                <p><strong>最有挑戰性成就:</strong> 完成人生第一場21公里半馬比賽</p>
-                <p><strong>興趣:</strong> 戶外運動</p>
-                <p><strong>專長:</strong> 天馬行空的創意</p>
-                <p><strong>座右銘:</strong> Experience comes from living</p>
-            </div>
-            <div class="about-photo">
-                <img src="https://via.placeholder.com/300" alt="Profile Photo">
-            </div>
-        </section>
+    <section class="about section-shell" aria-labelledby="about-title">
+      <div class="section-side"><p class="eyebrow">01 / ABOUT</p><h2 id="about-title">About Me</h2></div>
+      <div class="section-content about-content">
+        <p class="lead">保持對生活的好奇心，讓理性與想像力在作品中並行。</p>
+        <p>我專注於影音內容企劃與視覺敘事，擁有商業攝影、人物影像、品牌宣傳及大型活動影像製作經驗。除了親自執行拍攝與剪輯，也重視專案規劃、團隊協作與跨部門溝通。</p>
+        <p>我相信創意不該受限於既有框架；每一次新的製作挑戰，都是探索更好敘事方式的機會。</p>
+      </div>
+    </section>
 
-        <hr class="separator">
+    <section class="experience section-shell" aria-labelledby="experience-title">
+      <div class="section-side"><p class="eyebrow">02 / CAREER</p><h2 id="experience-title">Experience</h2><p class="side-note">從商業攝影到影像企劃，持續累積完整的製作視野。</p></div>
+      <div class="section-content timeline">
+        <article class="timeline-item">
+          <div class="timeline-year">2021 — PRESENT</div>
+          <div class="timeline-body">
+            <h3>台北捷運公司</h3><p class="job-title">動態影音編導 / 影像企劃</p>
+            <ul><li>企劃與製作企業形象、品牌宣傳及活動紀錄影片。</li><li>執行腳本撰寫、現場拍攝指導、剪輯及動態視覺後製。</li><li>協調跨部門需求、團隊分工與製作進度。</li><li>執行平面商品攝影、燈光配置、修圖及空拍紀錄。</li></ul>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-year">2020 — 2021</div>
+          <div class="timeline-body"><h3>浩富集團</h3><p class="job-title">動態影音製作</p><ul><li>製作企業形象與品牌行銷宣傳影片。</li><li>負責影像編排、錄製及現場拍攝指導。</li><li>規劃並執行線上研討會錄製相關工作。</li></ul></div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-year">2018 — 2020</div>
+          <div class="timeline-body"><h3>蕾絲娃娃</h3><p class="job-title">婚禮 / 人像攝影師</p><ul><li>執行婚禮與人像攝影，掌握現場光線與影像風格。</li><li>與客戶溝通拍攝需求，提出合適的視覺建議。</li></ul></div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-year">2015 — 2018</div>
+          <div class="timeline-body"><h3>雅特蘭攝影工作室</h3><p class="job-title">商業平面攝影師</p><ul><li>執行商業商品攝影與拍攝現場作業。</li><li>管理與維護攝影器材。</li></ul></div>
+        </article>
+      </div>
+    </section>
 
-        <section class="experience-group">
-            <div class="exp-label"><h2 class="accent-color">工作經歷</h2></div>
-            <div class="exp-list">
-                <div class="exp-item">
-                    <p><strong>台北捷運公司 | 2021-在職中</strong></p>
-                    <p>1. 負責拍攝公司形象影片<br>
-                       2. 腳本企劃編導，現場拍攝指導<br>
-                       3. 平面商品燈光架設，後期修圖<br>
-                       4. 空拍攝影紀錄<br>
-                    <p class="role accent-color">影音編導</p>
-                </div>
+    <section class="expertise section-shell" aria-labelledby="expertise-title">
+      <div class="section-side"><p class="eyebrow">03 / EXPERTISE</p><h2 id="expertise-title">What I Do</h2></div>
+      <div class="section-content expertise-grid">
+        <div class="expertise-card"><span>01</span><h3>Creative Planning</h3><p>創意發想、企劃提案、腳本與分鏡。</p></div>
+        <div class="expertise-card"><span>02</span><h3>Video Production</h3><p>現場編導、攝影、剪輯與影音製作。</p></div>
+        <div class="expertise-card"><span>03</span><h3>Motion & Visual</h3><p>動態視覺、商業攝影與後期修圖。</p></div>
+        <div class="expertise-card"><span>04</span><h3>Project Coordination</h3><p>跨部門溝通、工作分配與進度整合。</p></div>
+      </div>
+    </section>
 
-                <div class="exp-item">
-                    <p><strong>浩富集團 | 2020-2021</strong></p>
-                    <p>1. 行銷公司形象影片及宣傳企業品牌<br>
-                       2. 編排錄製，現場指導<br>
-                       3. 安排及錄製線上研討會之事宜</p>
-                    <p class="role accent-color">影音製作</p>
-                </div>
+    <section class="beyond section-shell" aria-labelledby="beyond-title">
+      <div class="section-side"><p class="eyebrow">04 / BEYOND WORK</p><h2 id="beyond-title">Beyond Work</h2></div>
+      <div class="section-content"><p class="lead">Experience comes from living.</p><p>工作之外，我喜歡潛水、爬山，也完成了人生第一場 21 公里半馬。對我而言，每次探索與突破，都是累積觀察力、耐心與創作靈感的過程。</p></div>
+    </section>
 
-                <div class="exp-item">
-                    <p><strong>蕾絲娃娃 | 2018-2020</strong></p>
-                    <p>1. 執行攝影工作<br>
-                       2. 與客戶溝通，適當給予建議，一起完成最好的拍攝成果</p>
-                    <p class="role accent-color">婚禮/人像攝影師</p>
-                </div>
-
-                <div class="exp-item">
-                    <p><strong>雅特蘭攝影工作室 | 2015-2018</strong></p>
-                    <p>1. 商品拍攝<br>
-                       2. 維護攝影器材</p>
-                    <p class="role accent-color">商業平面攝影師</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer style="text-align: center; padding: 40px; opacity: 0.5; font-size: 12px;">
-        © 2026 Joy Sun. All Rights Reserved.
-    </footer>
-
-    <script src="script.js"></script>
+    <section class="contact-banner section-shell" aria-label="作品與聯絡方式">
+      <div><p class="eyebrow">LET'S CREATE SOMETHING</p><h2>下一個故事，從這裡開始。</h2></div>
+      <a class="button button-primary" href="../contact/contact-index.html">Contact Me <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <footer class="site-footer">© 2026 Joy Sun. All Rights Reserved.</footer>
 </body>
 </html>
