@@ -30,3 +30,40 @@
   .skills-section { padding: 45px 14px; }
   .skills-list .skill-item span:not(.skill-icon) { font-size: 16px; }
 }
+
+/* ===== 手機版 Skills Icon 修正 ===== */
+
+@media (max-width: 768px) {
+
+    .skills-list .skill-item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 14px;
+    }
+
+    .skills-list .skill-item img.skill-logo {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        flex: 0 0 40px;
+
+        object-fit: contain;
+        margin: 0;
+        padding: 0;
+    }
+
+    .skills-list .skill-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        flex: 0 0 40px;
+    }
+}
