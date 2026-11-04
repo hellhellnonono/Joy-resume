@@ -27,7 +27,7 @@ button { font: inherit; }
 main { flex: 1; }
 .contact-hero { padding: clamp(70px, 11vw, 155px) 0 clamp(55px, 7vw, 100px); max-width: 900px; }
 .eyebrow, .card-label { color: var(--accent); font-size: .78rem; letter-spacing: .18em; font-weight: 700; }
-.contact-hero h1 { margin: 16px 0 24px; font-size: clamp(3.8rem, 10vw, 8.5rem); letter-spacing: -.065em; line-height: 1.02; font-weight: 750; }
+.contact-hero h1 { margin: 16px 0 24px; font-size: clamp(3rem, 7vw, 6rem); letter-spacing: -.055em; line-height: 1.08; font-weight: 750; }
 .contact-hero h1 em { color: var(--accent); font-style: normal; }
 .hero-zh { font-size: clamp(1.2rem, 2.5vw, 1.8rem); font-weight: 600; margin: 0 0 16px; }
 .hero-desc { color: var(--muted); font-size: 1rem; margin: 0; max-width: 650px; }
@@ -52,9 +52,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .contact-side { padding: 22px 6px; }
   .site-footer { flex-direction: column; }
 }
-@media (max-width: 380px) {
+@media (max-width: 150px) {
   .site-nav { gap: 8px 13px; }
   .site-nav > a, .nav-dropdown-trigger { font-size: .8rem; }
-  .contact-hero h1 { font-size: clamp(3.2rem, 15vw, 4.5rem); }
+  .contact-hero h1 { font-size: clamp(2.8rem, 11vw, 4rem); }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
