@@ -2,96 +2,60 @@
   --bg: #064e50;
   --bg-deep: #043e40;
   --panel: #0a5b5c;
-  --text: #f4f6f3;
-  --muted: #bed0cc;
-  --accent: #8bd7d0;
-  --line: rgba(255,255,255,.19);
-  --max-width: 1160px;
+  --accent: #9ce4e5;
+  --text: #fff;
+  --muted: #c6dddd;
+  --line: rgba(255,255,255,.23);
 }
-*, *::before, *::after { box-sizing: border-box; }
+* { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--bg); color: var(--text); font-family: "PingFang TC", "Microsoft JhengHei", Arial, sans-serif; line-height: 1.75; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: "PingFang TC", "Microsoft JhengHei", Arial, sans-serif; line-height: 1.65; }
 a { color: inherit; }
-button, a { -webkit-tap-highlight-color: transparent; }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
-.site-header { border-bottom: 1px solid var(--line); }
-.header-inner { max-width: var(--max-width); margin: auto; padding: 22px 28px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-.brand { font-size: 19px; font-weight: 800; letter-spacing: .13em; text-decoration: none; white-space: nowrap; }
-.brand-dot { color: var(--accent); }
-.main-nav { display: flex; align-items: center; gap: clamp(12px,2.5vw,32px); flex-wrap: wrap; }
-.main-nav a { font-size: 13px; letter-spacing: .04em; text-decoration: none; color: var(--muted); transition: color .2s ease; }
-.main-nav a:hover, .main-nav a.active { color: white; }
-.main-nav a.active { border-bottom: 1px solid var(--accent); padding-bottom: 5px; }
-.section-shell { max-width: var(--max-width); margin: 0 auto; padding: 84px 28px; }
-.eyebrow { color: var(--accent); font-size: 11px; letter-spacing: .17em; font-weight: 700; margin: 0 0 17px; }
-.hero { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); align-items: center; gap: clamp(32px,6vw,80px); min-height: 610px; }
-.hero h1 { font-size: clamp(40px,5.1vw,70px); line-height: 1.22; letter-spacing: -.035em; margin: 0 0 24px; font-weight: 750; }
-.hero h1 em { font-style: normal; color: var(--accent); }
-.hero-name { font-size: 19px; font-weight: 700; margin: 0 0 4px; }
-.hero-name span { font-size: 15px; color: var(--muted); font-weight: 400; margin-left: 8px; }
-.hero-position { color: var(--accent); font-size: 14px; margin: 0 0 18px; }
-.hero-description { max-width: 560px; color: var(--muted); font-size: 15px; margin: 0 0 30px; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 46px; padding: 10px 22px; border: 1px solid var(--accent); text-decoration: none; font-size: 13px; font-weight: 700; transition: background .2s ease, color .2s ease; }
-.button-primary { background: var(--accent); color: var(--bg-deep); }
-.button-primary:hover { background: #b2eee7; }
-.button-outline { color: white; background: transparent; }
-.button-outline:hover { background: rgba(255,255,255,.08); }
-.hero-visual { min-width: 0; }
-.portrait-placeholder { aspect-ratio: 4/5; background: linear-gradient(145deg,#267578,#0d3d40); border: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: rgba(255,255,255,.55); }
-.portrait-placeholder span { font-size: 13px; letter-spacing: .18em; }
-.portrait-placeholder small { font-size: 11px; }
-/* 放入真實形象照後：把 .portrait-placeholder 替換成 <img class="portrait-image" src="profile.jpg" alt="Joy Sun 個人形象照"> */
-.portrait-image { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
-.visual-caption { display: block; color: var(--muted); font-size: 10px; letter-spacing: .1em; text-align: right; margin-top: 12px; }
-.about, .experience, .expertise, .beyond { display: grid; grid-template-columns: minmax(170px,.32fr) minmax(0,.68fr); gap: clamp(28px,5vw,80px); border-top: 1px solid var(--line); }
-.section-side h2 { margin: 0; font-size: clamp(26px,3vw,38px); line-height: 1.25; letter-spacing: -.02em; }
-.section-content { min-width: 0; }
-.section-content p { color: var(--muted); margin: 0 0 18px; font-size: 15px; }
-.section-content .lead { font-size: clamp(19px,2vw,25px); line-height: 1.65; color: white; font-weight: 650; margin-bottom: 24px; }
-.side-note { color: var(--muted); font-size: 13px; margin-top: 20px; max-width: 220px; }
-.timeline-item { display: grid; grid-template-columns: 138px minmax(0,1fr); gap: 25px; padding: 0 0 38px; margin-bottom: 38px; border-bottom: 1px solid var(--line); }
-.timeline-item:last-child { border-bottom: 0; padding-bottom: 0; margin-bottom: 0; }
-.timeline-year { color: var(--accent); font-size: 12px; letter-spacing: .04em; font-weight: 700; padding-top: 7px; }
-.timeline-body h3 { font-size: 22px; line-height: 1.35; margin: 0 0 5px; }
-.timeline-body .job-title { color: var(--accent); font-size: 14px; margin: 0 0 14px; }
-.timeline-body ul { padding-left: 19px; margin: 0; color: var(--muted); font-size: 14px; }
-.timeline-body li { margin: 6px 0; }
-.expertise-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
-.expertise-card { padding: 24px; background: var(--panel); border: 1px solid var(--line); min-height: 176px; }
-.expertise-card span { font-size: 11px; color: var(--accent); }
-.expertise-card h3 { font-size: 17px; margin: 14px 0 6px; }
-.expertise-card p { font-size: 13px; margin: 0; }
-.contact-banner { background: var(--bg-deep); max-width: none; padding-left: max(28px,calc((100vw - var(--max-width))/2 + 28px)); padding-right: max(28px,calc((100vw - var(--max-width))/2 + 28px)); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.contact-banner h2 { font-size: clamp(23px,3vw,38px); line-height: 1.3; margin: 0; }
-.site-footer { text-align: center; padding: 30px 20px; font-size: 12px; color: var(--muted); }
-@media (max-width: 900px) {
- .hero { min-height: 0; }
- .hero h1 { font-size: clamp(35px,5vw,52px); }
- .about, .experience, .expertise, .beyond { grid-template-columns: minmax(130px,.3fr) minmax(0,.7fr); gap: 25px; }
- .timeline-item { grid-template-columns: 1fr; gap: 8px; }
+button { font: inherit; }
+.page-shell { width: min(100% - 64px, 1160px); min-height: 100vh; margin: 0 auto; display: flex; flex-direction: column; }
+main { flex: 1; }
+.contact-hero { padding: clamp(70px, 11vw, 155px) 0 clamp(55px, 7vw, 100px); max-width: 900px; }
+.eyebrow, .card-label { color: var(--accent); font-size: .78rem; letter-spacing: .18em; font-weight: 700; }
+.contact-hero h1 { margin: 16px 0 24px; font-size: clamp(3rem, 7vw, 6rem); letter-spacing: -.055em; line-height: 1.08; font-weight: 750; }
+.contact-hero h1 em { color: var(--accent); font-style: normal; }
+.hero-zh { font-size: clamp(1.2rem, 2.5vw, 1.8rem); font-weight: 600; margin: 0 0 16px; }
+.hero-desc { color: var(--muted); font-size: 1rem; margin: 0; max-width: 650px; }
+.contact-details { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(240px, .7fr); gap: 24px; margin-bottom: 90px; }
+.contact-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: clamp(25px, 4vw, 45px); }
+.card-label { margin: 0 0 20px; }
+.email-link { display: inline-flex; align-items: baseline; gap: 12px; font-size: clamp(1.1rem, 2.3vw, 1.8rem); font-weight: 700; text-decoration: none; overflow-wrap: anywhere; border-bottom: 1px solid transparent; }
+.email-link:hover { color: var(--accent); border-color: var(--accent); }
+.email-link span { font-size: 1.15rem; }
+.card-hint { color: var(--muted); font-size: .84rem; margin: 20px 0 0; }
+.contact-side { padding: 26px 12px; }
+.work-link { display: flex; justify-content: space-between; align-items: center; gap: 12px; text-decoration: none; border-bottom: 1px solid var(--line); padding: 15px 0; font-size: 1rem; }
+.work-link:hover { color: var(--accent); }
+.site-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px 25px; border-top: 1px solid var(--line); padding: 24px 0 35px; color: var(--muted); font-size: .75rem; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+@media (max-width: 768px) {
+  .page-shell { width: min(100% - 36px, 1160px); }
+  .site-nav { justify-content: center; gap: 12px 20px; }
+  .contact-hero { padding: 70px 0 55px; }
+  .contact-details { grid-template-columns: 1fr; gap: 8px; margin-bottom: 60px; }
+  .contact-side { padding: 22px 6px; }
+  .site-footer { flex-direction: column; }
 }
-@media (max-width: 680px) {
- .header-inner { padding: 19px 20px; flex-direction: column; gap: 15px; }
- .main-nav { justify-content: center; gap: 12px 19px; }
- .main-nav a { font-size: 12px; }
- .section-shell { padding: 58px 20px; }
- .hero { grid-template-columns: 1fr; gap: 36px; }
- .hero h1 { font-size: clamp(36px,9vw,52px); }
- .hero-visual { max-width: 440px; width: 100%; }
- .about, .experience, .expertise, .beyond { grid-template-columns: 1fr; gap: 28px; }
- .side-note { max-width: none; }
- .expertise-grid { grid-template-columns: 1fr 1fr; }
- .expertise-card { padding: 17px; min-height: 155px; }
- .expertise-card h3 { font-size: 15px; }
- .contact-banner { flex-direction: column; align-items: flex-start; }
+@media (max-width: 480px) {
+  .site-nav { gap: 8px 13px; }
+  .site-nav > a, .nav-dropdown-trigger { font-size: .8rem; }
+  .contact-hero h1 { font-size: clamp(2.8rem, 11vw, 4rem); }
 }
-@media (max-width: 390px) {
- .main-nav { gap: 9px 13px; }
- .expertise-grid { grid-template-columns: 1fr; }
- .hero-actions .button { width: 100%; }
-}
-@media (prefers-reduced-motion: reduce) {
- html { scroll-behavior: auto; }
- *, *::before, *::after { transition-duration: .01ms !important; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* v3: restore comfortable mobile layout without touching desktop */
+@media (max-width: 768px) {
+  .page-shell { width: min(calc(100% - 36px), 1160px); min-width: 0; }
+  .contact-hero { padding: 52px 0 38px; }
+  .contact-hero h1 { font-size: clamp(2.7rem, 11vw, 4rem); line-height: 1.12; }
+  .contact-details { display: grid; grid-template-columns: minmax(0,1fr); gap: 18px; margin-bottom: 55px; }
+  .contact-card { min-width: 0; padding: 24px 18px; }
+  .email-link { display: inline-flex; max-width: 100%; font-size: clamp(1rem, 4.3vw, 1.3rem); overflow-wrap: anywhere; word-break: break-word; }
+  .contact-side { min-width: 0; padding: 12px 4px; }
+  .work-link { font-size: .95rem; }
+  .site-footer { gap: 5px; text-align: center; align-items: center; }
 }
