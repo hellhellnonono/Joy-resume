@@ -183,3 +183,7 @@
     display: none !important;
   }
 }
+
+/* 2026 responsive refinements */
+html{overflow-x:clip}img,video{max-width:100%}
+@media(max-width:768px){.mobile-menu-toggle{min-width:44px;min-height:44px}.mobile-nav{max-height:calc(100dvh - 64px);overflow-y:auto}.left,.right,.about-section,.skills-section{min-width:0}.about-block{overflow-wrap:anywhere}}

@@ -1,0 +1,21 @@
+/* Shared mobile navigation — subpages only */
+*,*::before,*::after{box-sizing:border-box}
+html{overflow-x:clip}img,video,iframe{max-width:100%}
+.resume-mobile-header{display:none}
+@media(max-width:768px){
+ .resume-mobile-header{display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:3000;background:#005f5f;color:white;padding:12px 18px;min-height:64px;border-bottom:1px solid rgba(255,255,255,.16)}
+ .resume-mobile-brand{font-weight:750;letter-spacing:.07em;text-decoration:none;color:white;font-size:18px}
+ .resume-mobile-toggle{border:1px solid rgba(255,255,255,.45);border-radius:8px;background:transparent;color:white;font-size:24px;min-width:44px;min-height:44px;cursor:pointer}
+ .resume-mobile-nav{display:none;position:absolute;top:100%;left:0;right:0;background:#005f5f;padding:12px 18px 22px;box-shadow:0 12px 25px #0005;max-height:calc(100dvh - 64px);overflow:auto}
+ .resume-mobile-nav.is-open{display:grid;gap:4px}
+ .resume-mobile-nav a{color:white;text-decoration:none;font-size:16px;padding:12px 8px;border-bottom:1px solid rgba(255,255,255,.12)}
+ .resume-mobile-nav a:focus-visible,.resume-mobile-toggle:focus-visible{outline:2px solid #5ac8d8;outline-offset:2px}
+ .resume-mobile-nav a[aria-current=page]{color:#9ce9ed}
+ /* Hide only original subpage desktop navigation, not main content */
+ .site-header .main-nav,.site-header .sub-nav,.site-header .site-nav{display:none!important}
+ .site-header .header-inner,.site-header .title-row{justify-content:center}
+ .contact-hero h1{font-size:clamp(2.6rem,11vw,4rem)!important;overflow-wrap:anywhere}
+ .email-link{overflow-wrap:anywhere;word-break:break-word}
+ .portfolio-main,.section-shell,.contact-details{min-width:0}
+}
+@media(max-width:390px){.resume-mobile-brand{font-size:16px}.resume-mobile-header{padding-inline:12px}}
