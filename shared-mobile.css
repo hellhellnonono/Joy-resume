@@ -4,7 +4,7 @@ img, video, iframe { max-width: 100%; }
 .resume-mobile-header { display: none; }
 @media (max-width: 768px) {
   /* One navigation only: replace the existing subpage header on small screens. */
-  body[data-resume-page] > .site-header { display: none !important; }
+  body[data-resume-page].has-mobile-nav > .site-header { display: none !important; }
   body[data-resume-page] > .resume-mobile-header {
     display: flex; align-items: center; justify-content: space-between;
     position: sticky; top: 0; z-index: 3000; min-height: 64px;

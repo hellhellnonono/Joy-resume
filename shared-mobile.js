@@ -48,4 +48,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.matchMedia('(min-width: 769px)').addEventListener('change', event => { if (event.matches) setOpen(false); });
   header.append(brand, button, nav);
   document.body.prepend(header);
+  document.body.classList.add('has-mobile-nav');
 });
