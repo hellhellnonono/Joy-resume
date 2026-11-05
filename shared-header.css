@@ -1,0 +1,161 @@
+
+/* ================================
+   SHARED HEADER
+   Personal / Video / Photo / Contact
+================================ */
+
+.site-header {
+    background: #064e50;
+    border-bottom: none;
+    padding: 0;
+}
+
+.site-header .header-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 22px 28px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
+
+    border-bottom: 1px solid rgba(255,255,255,.19);
+}
+
+/* Logo */
+.site-header .brand {
+    color: #f4f6f3;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: .13em;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.site-header .brand-dot {
+    color: #8bd7d0;
+}
+
+/* Navigation */
+.site-header .site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(14px, 2.5vw, 34px);
+}
+
+.site-header .site-nav > a,
+.site-header .nav-dropdown-trigger {
+    color: rgba(255,255,255,.72);
+    font: inherit;
+    font-size: 13px;
+    letter-spacing: .04em;
+    text-decoration: none;
+
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid transparent;
+
+    padding: 8px 0;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.site-header .site-nav > a:hover,
+.site-header .site-nav > a.active,
+.site-header .nav-dropdown-trigger:hover,
+.site-header .nav-dropdown-trigger.active {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+/* Dropdown */
+.site-header .nav-dropdown {
+    position: relative;
+}
+
+.site-header .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 100;
+
+    min-width: 155px;
+    padding: 8px;
+
+    background: #084e50;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 8px;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,.22);
+}
+
+.site-header .nav-dropdown:hover .nav-dropdown-menu,
+.site-header .nav-dropdown:focus-within .nav-dropdown-menu,
+.site-header .nav-dropdown.is-open .nav-dropdown-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-header .nav-dropdown-menu a {
+    display: block;
+    color: rgba(255,255,255,.85);
+    font-size: 13px;
+    text-decoration: none;
+    padding: 11px 13px;
+    border-radius: 5px;
+}
+
+.site-header .nav-dropdown-menu a:hover,
+.site-header .nav-dropdown-menu a:focus-visible {
+    background: rgba(255,255,255,.12);
+    color: #fff;
+}
+
+.site-header a:focus-visible,
+.site-header button:focus-visible {
+    outline: 2px solid #a9e4e5;
+    outline-offset: 4px;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+    .site-header .header-inner {
+        padding: 19px 20px;
+        justify-content: center;
+    }
+
+    /* 手機隱藏大型 Logo */
+    .site-header .brand {
+        display: none;
+    }
+
+    .site-header .site-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .site-header .site-nav > a,
+    .site-header .nav-dropdown-trigger {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 390px) {
+    .site-header .site-nav {
+        gap: 10px 12px;
+    }
+
+    .site-header .site-nav > a,
+    .site-header .nav-dropdown-trigger {
+        font-size: 11px;
+    }
+}
