@@ -14,14 +14,6 @@ body { margin: 0; background: var(--bg); color: var(--text); font-family: "PingF
 a { color: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
-.site-header { border-bottom: 1px solid var(--line); }
-.header-inner { max-width: var(--max-width); margin: auto; padding: 22px 28px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-.brand { font-size: 19px; font-weight: 800; letter-spacing: .13em; text-decoration: none; white-space: nowrap; }
-.brand-dot { color: var(--accent); }
-.main-nav { display: flex; align-items: center; gap: clamp(12px,2.5vw,32px); flex-wrap: wrap; }
-.main-nav a { font-size: 13px; letter-spacing: .04em; text-decoration: none; color: var(--muted); transition: color .2s ease; }
-.main-nav a:hover, .main-nav a.active { color: white; }
-.main-nav a.active { border-bottom: 1px solid var(--accent); padding-bottom: 5px; }
 .section-shell { max-width: var(--max-width); margin: 0 auto; padding: 84px 28px; }
 .eyebrow { color: var(--accent); font-size: 11px; letter-spacing: .17em; font-weight: 700; margin: 0 0 17px; }
 .hero { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); align-items: center; gap: clamp(32px,6vw,80px); min-height: 610px; }
@@ -72,9 +64,6 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
  .timeline-item { grid-template-columns: 1fr; gap: 8px; }
 }
 @media (max-width: 680px) {
- .header-inner { padding: 19px 20px; flex-direction: column; gap: 15px; }
- .main-nav { justify-content: center; gap: 12px 19px; }
- .main-nav a { font-size: 12px; }
  .section-shell { padding: 58px 20px; }
  .hero { grid-template-columns: 1fr; gap: 36px; }
  .hero h1 { font-size: clamp(36px,9vw,52px); }
@@ -87,7 +76,6 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
  .contact-banner { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 390px) {
- .main-nav { gap: 9px 13px; }
  .expertise-grid { grid-template-columns: 1fr; }
  .hero-actions .button { width: 100%; }
 }
