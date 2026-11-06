@@ -187,3 +187,79 @@
 /* 2026 responsive refinements */
 html{overflow-x:clip}img,video{max-width:100%}
 @media(max-width:768px){.mobile-menu-toggle{min-width:44px;min-height:44px}.mobile-nav{max-height:calc(100dvh - 64px);overflow-y:auto}.left,.right,.about-section,.skills-section{min-width:0}.about-block{overflow-wrap:anywhere}}
+
+/* v8 — Homepage mobile navigation, aligned with Contact; desktop unaffected */
+@media (max-width: 768px) {
+  .mobile-header {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    min-height: 68px;
+    padding: 12px 20px;
+    background: #064e50;
+    border-bottom: 1px solid rgba(255,255,255,.19);
+  }
+  .mobile-brand {
+    color: #f4f6f3;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: .13em;
+    white-space: nowrap;
+  }
+  .mobile-brand-dot { color: #8bd7d0; }
+  .mobile-menu-toggle {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    padding: 0;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 8px;
+    background: transparent;
+    color: #f4f6f3;
+    font-size: 28px;
+    line-height: 1;
+  }
+  .mobile-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 14px 20px 28px;
+    max-height: calc(100dvh - 68px);
+    overflow-y: auto;
+    background: #064e50;
+    box-shadow: 0 12px 25px rgba(0,0,0,.2);
+    border-bottom: 1px solid rgba(255,255,255,.19);
+  }
+  .mobile-nav.is-open {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .mobile-nav > a {
+    display: block;
+    padding: 20px 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #f4f6f3;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,.16);
+  }
+  .mobile-nav > a[aria-current="page"] {
+    color: #8bd7d0;
+    font-weight: 700;
+  }
+  .mobile-menu-toggle:focus-visible,
+  .mobile-nav > a:focus-visible,
+  .mobile-brand:focus-visible {
+    outline: 2px solid #8bd7d0;
+    outline-offset: 3px;
+  }
+}
+@media (max-width: 375px) {
+  .mobile-header { padding-inline: 14px; }
+  .mobile-brand { font-size: 17px; }
+}

@@ -24,7 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.classList.remove("is-open");
     menuButton.setAttribute("aria-expanded", "false");
     menuButton.setAttribute("aria-label", "開啟選單");
+    menuButton.textContent = "☰";
   }
+
+  if (!menuButton || !menu) return;
 
   menuButton.addEventListener("click", () => {
     const isOpen = menu.classList.toggle("is-open");
@@ -57,6 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     setLanguage(selected?.dataset.language || "zh");
     closeMenu();
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeMenu();
   });
 
   setLanguage("zh");
