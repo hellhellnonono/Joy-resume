@@ -4,7 +4,7 @@
 const projects = {
   earphone: { title: 'Earphones', images: ['earphone-01.JPG', 'earphone-02.JPG'] },
   coffee: { title: 'Coffee Gift Set', images: ['coffeeset-02.jpg', 'coffeeset-03.JPG'] },
-  nougat: { title: 'Nougat', images: ['nugat-01.jpg', 'nugat-02.jpg', 'nugat-03.jpg', 'nugat-04.jpg'] },
+  nougat: { title: 'Nougat', images: ['nugat-01.jpg', 'nugat-02.jpg', 'nugat-03.jpg', 'nugat-04.jpg','cookie-01.jpg','cookie-02.jpg'] },
   portrait: { title: 'Portrait Photography', images: ['Portrait Photography-01.JPG', 'Portrait Photography-02.JPG'] },
   birthday: { title: 'First Birthday Celebration', images: ['one-year-old catch-01.jpg', 'one-year-old catch-02.jpg'] },
   commercial: { title: 'Commercial Editorial', images: ['commercial-01.jpg', 'commercial-02.jpg'] }
